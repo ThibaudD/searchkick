@@ -17,7 +17,7 @@ require "searchkick/tasks"
 module Searchkick
 
   def self.client
-    @client ||= Elasticsearch::Client.new(url: ENV["ELASTICSEARCH_URL"])
+    @client ||= Elasticsearch::Client.new({url: ENV["ELASTICSEARCH_URL"], logs: true})
   end
 
   @callbacks = true
